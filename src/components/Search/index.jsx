@@ -24,6 +24,11 @@ function Search() {
   };
 
   const onSearchClick = async () => {
+    if (term === '') {
+      sendNotification('Por favor, digite uma cidade!', 'warning');
+      return;
+    }
+
     setSearchLoading(true);
 
     await getCurrentWeather(term);

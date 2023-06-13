@@ -1,10 +1,9 @@
 import React from 'react';
+import MainPage from './pages/MainPage';
 
 function App() {
   return (
-    <main>
-      <h1>Initializing Projects</h1>
-    </main>
+    <MainPage />
   );
 }
 

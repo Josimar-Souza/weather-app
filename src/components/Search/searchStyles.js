@@ -10,6 +10,10 @@ export const SearchContainer = styled.div`
   min-height: 150px;
   padding: 10px;
   width: 25%;
+
+  @media only screen and (max-width: 512px) {
+    width: 90%;
+  }
 `;
 
 export const SearchTitle = styled.h1`

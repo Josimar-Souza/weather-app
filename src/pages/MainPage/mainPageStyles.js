@@ -4,7 +4,7 @@ export const MainPageContainer = styled.main`
   align-items: center;
   background-color: #62ACF5;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   min-height: 100vh;
   width: 100%;
 `;

@@ -7,6 +7,11 @@ export const MainPageContainer = styled.main`
   justify-content: center;
   min-height: 100vh;
   width: 100%;
+
+  @media only screen and (max-width: 512px) {
+    flex-direction: column;
+    padding: 10px;
+  };
 `;
 
 export default MainPageContainer;

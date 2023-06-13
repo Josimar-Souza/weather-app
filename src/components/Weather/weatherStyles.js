@@ -3,12 +3,19 @@ import { EnvironmentOutlined } from '@ant-design/icons';
 
 export const WeatherContainer = styled.div`
   background-color: white;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   margin-left: 5rem;
   min-height: 550px;
   padding: 5px;
   width: 20%;
+
+  @media only screen and (max-width: 512px) {
+    margin: 0;
+    margin-top: 20px;
+    width: 90%;
+  }
 `;
 
 export const WeatherTitle = styled.h1`

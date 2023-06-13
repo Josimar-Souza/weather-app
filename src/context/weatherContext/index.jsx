@@ -11,8 +11,8 @@ const weatherAPI = new WeatherAPI(15000);
 function WeatherContext({ children }) {
   const [currentWeather, setCurrentWeather] = useState({});
 
-  const getCurrentWeather = async (city) => {
-    const weather = await weatherAPI.getCurrentWeatherByCity(city);
+  const getCurrentWeather = async (term) => {
+    const weather = await weatherAPI.getCurrentWeather(term);
 
     if (weather instanceof ErrorCreator) {
       sendNotification(weather.customMessage, 'error');

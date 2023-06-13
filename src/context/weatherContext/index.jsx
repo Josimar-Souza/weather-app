@@ -1,4 +1,9 @@
-import React, { createContext, useState, useMemo } from 'react';
+import React, {
+  createContext,
+  useState,
+  useMemo,
+  useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 
 import WeatherAPI from '../../domain/weather';
@@ -11,8 +16,22 @@ const weatherAPI = new WeatherAPI(15000);
 function WeatherContext({ children }) {
   const [currentWeather, setCurrentWeather] = useState({});
 
-  const getCurrentWeather = async (city) => {
-    const weather = await weatherAPI.getCurrentWeatherByCity(city);
+  useEffect(() => {
+    const getInitialWeather = async () => {
+      const weather = await weatherAPI.getCurrentWeather();
+
+      if (weather instanceof ErrorCreator) {
+        sendNotification(weather.customMessage, 'error');
+      } else {
+        setCurrentWeather(weather);
+      }
+    };
+
+    getInitialWeather();
+  }, []);
+
+  const getCurrentWeather = async (term) => {
+    const weather = await weatherAPI.getCurrentWeather(term);
 
     if (weather instanceof ErrorCreator) {
       sendNotification(weather.customMessage, 'error');
@@ -23,7 +42,6 @@ function WeatherContext({ children }) {
 
   const contextValue = useMemo(() => ({
     currentWeather,
-    setCurrentWeather,
     getCurrentWeather,
   }));
 

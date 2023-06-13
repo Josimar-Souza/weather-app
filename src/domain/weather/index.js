@@ -11,13 +11,13 @@ class WeatherAPI {
     });
   }
 
-  async getCurrentWeatherByCity(city = 'Paris') {
+  async getCurrentWeather(term = 'Paris') {
     try {
-      const { data } = await this.api.get(`${baseUrl}/current.json?key=${apiKey}&q=${city}`);
+      const { data } = await this.api.get(`${baseUrl}/current.json?key=${apiKey}&q=${term}`);
 
       return data;
     } catch (e) {
-      return new ErrorCreator(e, `Não foi possível encontrar as informações do tempo para ${city}`);
+      return new ErrorCreator(e, `Não foi possível encontrar as informações do tempo para o termo ${term}`);
     }
   }
 }

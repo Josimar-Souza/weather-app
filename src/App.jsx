@@ -1,9 +1,12 @@
 import React from 'react';
 import MainPage from './pages/MainPage';
+import WeatherContext from './context/weatherContext';
 
 function App() {
   return (
-    <MainPage />
+    <WeatherContext>
+      <MainPage />
+    </WeatherContext>
   );
 }
 

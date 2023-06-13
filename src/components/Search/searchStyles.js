@@ -52,9 +52,9 @@ export const CustomButton = styled(Button)`
   border: none;
   color: white;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin: ${({ margin }) => margin};
   min-height: 40px;
-  width: 80%;
+  width: ${({ width }) => width};
 
   &:hover {
     color: white !important;

@@ -23,7 +23,6 @@ function WeatherContext({ children }) {
 
   const contextValue = useMemo(() => ({
     currentWeather,
-    setCurrentWeather,
     getCurrentWeather,
   }));
 

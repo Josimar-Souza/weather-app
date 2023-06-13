@@ -17,7 +17,7 @@ class WeatherAPI {
 
       return data;
     } catch (e) {
-      return new ErrorCreator(e, `Não foi possível encontrar as informações do tempo para ${term}`);
+      return new ErrorCreator(e, `Não foi possível encontrar as informações do tempo para o termo ${term}`);
     }
   }
 }

@@ -41,7 +41,7 @@ function Weather() {
           <WeatherInfo>{current?.condition.text}</WeatherInfo>
           <WeatherInfo>
             <CustomEnvironmentIcon />
-            {`${location?.name}, ${location?.country}`}
+            {`${location?.name}, ${location?.region}, ${location?.country}`}
           </WeatherInfo>
         </MainWeatherInfoContainer>
       </WeatherMainInfo>

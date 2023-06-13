@@ -47,6 +47,7 @@ export const WeatherInfo = styled.p`
   font-size: 20px;
   font-weight: 500;
   margin: 5px 0;
+  text-align: center;
 `;
 
 export const CustomEnvironmentIcon = styled(EnvironmentOutlined)`
